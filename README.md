@@ -71,7 +71,7 @@ The scraping cells at the top (1-17) do not need to run if you already have `Edi
 - Scout reports: scraped from [HoopsProspects](https://hoopsprospects.com/scouting-reports/) using `requests` and BeautifulSoup. The scraping code is in cells 1-17 of the notebook.
 - NBA draft results: compiled from [Basketball Reference's draft pages](https://www.basketball-reference.com/draft/) for years 2018-2025, cleaned into one CSV per year.
 
-## Non-standard libraries (!!NEED TO ADD)
+## Non-standard libraries
 
 The notebook uses pandas, numpy, scikit-learn, matplotlib, and seaborn (standard). Beyond that:
 
@@ -79,9 +79,25 @@ The notebook uses pandas, numpy, scikit-learn, matplotlib, and seaborn (standard
 
 Colab has TensorFlow pre-installed. The Hugging Face packages are installed in cell 41 via `!pip install`.
 
-## Models we used (!!NEED TO ADD)
+Transformers (Hugging Face) — used for DistilBERT fine-tuning
+https://huggingface.co/docs/transformers/index
 
-## Notebooks and tutorials we referenced (!!NEED TO ADD, only added the ones for data vis code)
+Datasets (Hugging Face) — used to create DatasetDict objects for BERT training
+https://huggingface.co/docs/datasets/index
+
+Evaluate (Hugging Face) — used to compute accuracy and F1 during BERT training
+https://huggingface.co/docs/evaluate/index
+
+TensorFlow / Keras — used to build and train the CNN
+https://www.tensorflow.org/api_docs/python/tf/keras
+
+
+## Models we used
+
+- DistilBERT (distilbert-base-uncased) — pre-trained model fine-tuned for sequence classification
+  (https://huggingface.co/distilbert/distilbert-base-uncased)
+
+## Notebooks and tutorials we referenced
 
 Beyond the official scikit-learn, seaborn, Hugging Face, and TensorFlow docs:
 
@@ -90,6 +106,13 @@ Beyond the official scikit-learn, seaborn, Hugging Face, and TensorFlow docs:
 - [Seaborn "Annotated heatmaps" example](https://seaborn.pydata.org/examples/spreadsheet_heatmap.html). Reference for the annotated heatmap layout in the visualizations.
 - DataCamp, [*Seaborn Heatmaps: A Guide to Data Visualization*](https://www.datacamp.com/tutorial/seaborn-heatmaps). Reference for `annot_kws` and `cbar_kws` parameters.
 - DataCamp, [*Python Boxplots: A Comprehensive Guide for Beginners*](https://www.datacamp.com/tutorial/python-boxplots). Reference for the two-group boxplot comparison.
+
+Much of our code was adapted from notebooks/examples we went over in class or for homework assignments.
+
+## Data augmentation:
+
+ChatGPT (GPT-4o) — used to generate 30 synthetic undrafted player scouting reports for Task 1 training data augmentation
+https://openai.com/chatgpt
 
 ## Team
 
